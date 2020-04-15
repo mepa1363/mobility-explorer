@@ -1,0 +1,37 @@
+service: scheduled-cron
+
+plugins:
+  - serverless-python-requirements
+
+provider:
+  name: aws
+  runtime: python3.7
+  region: us-east-1
+  memorySize: 1024
+  timeout: 900
+
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "sagemaker:InvokeEndpoint"
+      Resource:
+        - "arn:aws:sagemaker:us-east-1:*:*"
+    - Effect: "Allow"
+      Action:
+        - "rds-db:connect"
+      Resource:
+        - "arn:aws:rds-db:us-east-1:*:*:*/*"
+
+functions:
+  count_vehicles:
+    handler: handler.count_vehicles
+    events:
+      - schedule: rate(5 minutes)
+  count_humans:
+    handler: handler.count_humans
+    events:
+      - schedule: rate(5 minutes)
+  count_bikes:
+    handler: handler.count_bikes
+    events:
+      - schedule: rate(5 minutes)

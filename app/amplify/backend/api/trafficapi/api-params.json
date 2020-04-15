@@ -1,0 +1,125 @@
+{
+    "paths": [
+        {
+            "name": "/camera",
+            "lambdaFunction": "camera",
+            "privacy": {
+                "open": true
+            }
+        },
+        {
+            "name": "/summary/total",
+            "lambdaFunction": "summarytotal",
+            "privacy": {
+                "open": true
+            }
+        },
+        {
+            "name": "/summary/community",
+            "lambdaFunction": "summarycommunity",
+            "privacy": {
+                "open": true
+            }
+        },
+        {
+            "name": "/trend/past-month",
+            "lambdaFunction": "chartpastmonthtrend",
+            "privacy": {
+                "open": true
+            }
+        },
+        {
+            "name": "/trend/past-week",
+            "lambdaFunction": "chartpastweektrend",
+            "privacy": {
+                "open": true
+            }
+        },
+        {
+            "name": "/trend/today",
+            "lambdaFunction": "charttodaytrend",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "trafficapi",
+    "apiName": "trafficapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "camera"
+        },
+        {
+            "lambdaFunction": "summarytotal"
+        },
+        {
+            "lambdaFunction": "summarycommunity"
+        },
+        {
+            "lambdaFunction": "chartpastmonthtrend"
+        },
+        {
+            "lambdaFunction": "chartpastweektrend"
+        },
+        {
+            "lambdaFunction": "charttodaytrend"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-app-dev-215402-authRole",
+        "unAuthRoleName": "amplify-app-dev-215402-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "camera",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "summarytotal",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "summarycommunity",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "chartpastmonthtrend",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "chartpastweektrend",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "charttodaytrend",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ],
+    "uuid": "8859c878"
+}
